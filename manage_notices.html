@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Portal – Manage Notices</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<!--
+  Notice management page: administrators can create and delete notices
+  visible to students.  Keeping announcements up‑to‑date ensures
+  communication flows smoothly【36125880033441†L243-L247】.
+-->
+<body onload="checkAdmin(); loadManageNotices();">
+    <!-- Top bar and side navigation for admin -->
+    <div class="topbar">
+        <span id="menuToggle" class="menu-toggle" onclick="toggleSidenav()">&#9776;</span>
+        <a href="admin_dashboard.html" class="logo">Admin Portal</a>
+    </div>
+    <div id="sidenav" class="sidenav">
+        <a href="admin_dashboard.html"><img src="icons/home.svg" class="nav-icon" alt="">Dashboard</a>
+        <a href="manage_courses.html"><img src="icons/course-registration.svg" class="nav-icon" alt="">Manage Courses</a>
+        <a href="manage_notices.html"><img src="icons/notices.svg" class="nav-icon" alt="">Manage Notices</a>
+        <a href="manage_assignments.html"><img src="icons/assignments.svg" class="nav-icon" alt="">Manage Assignments</a>
+        <a href="manage_events.html"><img src="icons/calendar.svg" class="nav-icon" alt="">Manage Events</a>
+        <a href="manage_library.html"><img src="icons/library.svg" class="nav-icon" alt="">Manage Library</a>
+        <a href="view_students.html"><img src="icons/profile.svg" class="nav-icon" alt="">View Students</a>
+        <a href="#" onclick="logout(); return false;"><img src="icons/logout.svg" class="nav-icon" alt="">Logout</a>
+    </div>
+    <div class="content">
+        <h1>Manage Notices</h1>
+        <div id="noticeManagement"></div>
+        <h2>Add New Notice</h2>
+        <form id="addNoticeForm" onsubmit="addNotice(event)">
+            <label for="newNoticeTitle">Title</label>
+            <input type="text" id="newNoticeTitle" required>
+            <label for="newNoticeContent">Content</label>
+            <textarea id="newNoticeContent" rows="4" style="width:100%" required></textarea>
+            <button type="submit">Add Notice</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

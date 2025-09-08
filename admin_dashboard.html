@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Portal – Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<!--
+  Admin dashboard: displays a summary of portal statistics such as
+  number of courses, notices and students.  Administrators can use
+  this page to quickly navigate to management pages.
+-->
+<body onload="checkAdmin(); loadAdminDashboard();">
+    <!-- Top bar and side navigation for admin -->
+    <div class="topbar">
+        <span id="menuToggle" class="menu-toggle" onclick="toggleSidenav()">&#9776;</span>
+        <a href="admin_dashboard.html" class="logo">Admin Portal</a>
+    </div>
+    <div id="sidenav" class="sidenav">
+        <a href="admin_dashboard.html"><img src="icons/home.svg" class="nav-icon" alt="">Dashboard</a>
+        <a href="manage_courses.html"><img src="icons/course-registration.svg" class="nav-icon" alt="">Manage Courses</a>
+        <a href="manage_notices.html"><img src="icons/notices.svg" class="nav-icon" alt="">Manage Notices</a>
+        <a href="manage_assignments.html"><img src="icons/assignments.svg" class="nav-icon" alt="">Manage Assignments</a>
+        <a href="manage_events.html"><img src="icons/calendar.svg" class="nav-icon" alt="">Manage Events</a>
+        <a href="manage_library.html"><img src="icons/library.svg" class="nav-icon" alt="">Manage Library</a>
+        <a href="view_students.html"><img src="icons/profile.svg" class="nav-icon" alt="">View Students</a>
+        <a href="#" onclick="logout(); return false;"><img src="icons/logout.svg" class="nav-icon" alt="">Logout</a>
+    </div>
+    <div class="content">
+        <h1>Admin Dashboard</h1>
+        <p>Use the dashboard to get a snapshot of the portal and access management tools.</p>
+        <div id="adminSummary"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

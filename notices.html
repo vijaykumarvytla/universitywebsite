@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portal – Notices</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<!--
+  The notices page lists important announcements for students.  In a
+  real portal these announcements would be pulled from a database or
+  content management system; here they are hard‑coded for illustrative
+  purposes.  See the communications and notification features described
+  in the VTOP login article for inspiration【36125880033441†L243-L247】.
+-->
+<body onload="checkAuth();">
+    <!-- Top bar and side navigation -->
+    <div class="topbar">
+        <span id="menuToggle" class="menu-toggle" onclick="toggleSidenav()">&#9776;</span>
+        <a href="dashboard.html" class="logo">Student Portal</a>
+    </div>
+    <div id="sidenav" class="sidenav">
+        <a href="dashboard.html"><img src="icons/home.svg" class="nav-icon" alt="">Dashboard</a>
+        <a href="course_registration.html"><img src="icons/course-registration.svg" class="nav-icon" alt="">Course Registration</a>
+        <a href="notices.html"><img src="icons/notices.svg" class="nav-icon" alt="">Notices</a>
+        <a href="results.html"><img src="icons/results.svg" class="nav-icon" alt="">Results</a>
+        <a href="timetable.html"><img src="icons/timetable.svg" class="nav-icon" alt="">Timetable</a>
+        <a href="attendance.html"><img src="icons/attendance.svg" class="nav-icon" alt="">Attendance</a>
+        <a href="assignments.html"><img src="icons/assignments.svg" class="nav-icon" alt="">Assignments</a>
+        <a href="library.html"><img src="icons/library.svg" class="nav-icon" alt="">Library</a>
+        <a href="calendar.html"><img src="icons/calendar.svg" class="nav-icon" alt="">Calendar</a>
+        <a href="tasks.html"><img src="icons/tasks.svg" class="nav-icon" alt="">Tasks</a>
+        <a href="messaging.html"><img src="icons/messaging.svg" class="nav-icon" alt="">Messaging</a>
+        <a href="notifications.html"><img src="icons/notifications.svg" class="nav-icon" alt="">Notifications</a>
+        <a href="assistant.html"><img src="icons/assistant.svg" class="nav-icon" alt="">Assistant</a>
+        <a href="analytics.html"><img src="icons/analytics.svg" class="nav-icon" alt="">Analytics</a>
+        <a href="profile.html"><img src="icons/profile.svg" class="nav-icon" alt="">Profile</a>
+        <a href="#" onclick="logout(); return false;"><img src="icons/logout.svg" class="nav-icon" alt="">Logout</a>
+    </div>
+
+    <div class="content">
+        <h1>Notices</h1>
+        <!-- Dynamic notices will be injected into this container by the
+             loadNotices() function.  Administrators can manage notices on
+             the admin panel and students will see them here. -->
+        <div id="noticesContainer"></div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        // Load notices when the page is ready.  Use checkStudent to
+        // ensure that only students access this page.
+        window.addEventListener('DOMContentLoaded', function() {
+            checkStudent();
+            loadNotices();
+        });
+    </script>
+</body>
+</html>

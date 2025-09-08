@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portal – Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Decorative banner illustrating a campus in crimson and cream -->
+    <div class="banner">
+        <img src="images/banner.png" alt="Campus banner">
+    </div>
+    <div class="login-container">
+        <h1>Student Portal Login</h1>
+        <!--
+          The login form allows a user to enter a username and password.  For
+          demonstration purposes any non‑empty credentials will succeed.  When
+          submitted the form triggers the login() function defined in
+          script.js which stores the username and a logged‑in flag in
+          localStorage and then redirects the visitor to the dashboard page.
+        -->
+        <form id="loginForm" onsubmit="login(event)">
+            <label for="username">Username</label>
+            <input type="text" id="username" placeholder="Enter your username" required>
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter your password" required>
+            <label for="role">Role</label>
+            <!-- Role selection allows a visitor to log in either as a
+                 student or as an administrator.  Depending on the
+                 selected role the application will display different
+                 dashboards and features.  Students have access to course
+                 registration and academic tools while admins can manage
+                 courses and notices. -->
+            <select id="role">
+                <option value="student" selected>Student</option>
+                <option value="admin">Admin</option>
+            </select>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

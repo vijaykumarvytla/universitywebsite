@@ -1,0 +1,442 @@
+/*
+  Shared stylesheet for the student portal.  This version adopts
+  Indiana University’s iconic crimson and cream palette to give the
+  application a distinctive academic look and feel.  The crimson
+  primary colour is widely used across IU branding, while softer
+  creams and pinks provide contrast for content areas【904349440428426†L160-L173】.
+  The overall layout still prioritizes clarity and ease of navigation
+  recommended for student portals【17090984971718†L61-L68】, but with richer
+  colours and imagery to create an engaging experience.
+*/
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    /* Soft cream background to complement the crimson palette */
+    background-color: #fdf6f5;
+    color: #330000;
+}
+
+/* Bar charts for analytics */
+.bar-container {
+    width: 100%;
+    height: 20px;
+    /* Light pink track for analytic bar */
+    background-color: #f1d9d7;
+    border-radius: 4px;
+    margin: 0.5rem 0;
+}
+.bar {
+    height: 100%;
+    /* Crimson bar representing progress */
+    background-color: #990000;
+    border-radius: 4px;
+}
+
+/* Messaging and assistant messages */
+.message {
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 4px;
+    /* Light pink background for chat messages */
+    background-color: #fbeaea;
+}
+.message.user {
+    /* Slightly darker pink for user messages */
+    background-color: #f8d8d8;
+}
+.message.bot {
+    /* Very light pink for assistant messages */
+    background-color: #fef0f0;
+}
+.message .timestamp {
+    font-size: 0.7rem;
+    color: #555;
+}
+
+/* Notifications list */
+.notification-list {
+    list-style: none;
+    padding: 0;
+}
+.notification {
+    background-color: #fef4f4;
+    border: 1px solid #f1c0c0;
+    padding: 0.8rem;
+    margin-bottom: 0.5rem;
+    border-radius: 4px;
+    position: relative;
+}
+.notification.read {
+    opacity: 0.6;
+}
+.notification button {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background-color: #990000;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 0.2rem 0.4rem;
+    font-size: 0.7rem;
+    cursor: pointer;
+}
+.notification button:hover {
+    background-color: #7b001c;
+}
+
+/* Navigation Bar */
+.navbar {
+    background-color: #990000;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.navbar .logo {
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: #fff;
+    text-decoration: none;
+}
+.navbar .nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+.navbar .nav-links li {
+    margin-left: 1rem;
+}
+.navbar .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 0.8rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+.navbar .nav-links a:hover {
+    background-color: #7b001c;
+}
+
+/* Content Wrapper */
+.content {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* Login Form */
+.login-container {
+    max-width: 400px;
+    margin: 5rem auto;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.login-container h1 {
+    margin-top: 0;
+    text-align: center;
+}
+.login-container label {
+    display: block;
+    margin-top: 1rem;
+}
+.login-container input {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.2rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Style select elements similarly to inputs to maintain a cohesive
+   look on the login and other forms. */
+select {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.2rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+
+/* Style textareas to match inputs */
+textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.2rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: inherit;
+}
+
+/* Style generic buttons inside tables/forms */
+button {
+    padding: 0.4rem 0.8rem;
+    background-color: #990000;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+button:hover {
+    background-color: #7b001c;
+}
+.login-container button {
+    width: 100%;
+    padding: 0.7rem;
+    margin-top: 1.5rem;
+    background-color: #990000;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+.login-container button:hover {
+    background-color: #7b001c;
+}
+
+/*
+  Side navigation and top bar
+
+  A modern student portal benefits from an intuitive navigation
+  structure.  Instead of a long horizontal list of links, this
+  redesign introduces a collapsible side menu paired with a fixed
+  top bar.  The hamburger icon on the top bar toggles the
+  navigation drawer, while each link uses an icon for quick
+  recognition.  This layout supports accessibility and touch
+  devices while preserving the crimson palette【17090984971718†L61-L68】.
+*/
+
+/* Fixed top bar at the top of every page */
+.topbar {
+    display: flex;
+    align-items: center;
+    background-color: #990000;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 900;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Menu toggle (hamburger) */
+.menu-toggle {
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-right: 1rem;
+}
+
+/* Top bar logo */
+.topbar .logo {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+/* Side navigation drawer */
+.sidenav {
+    position: fixed;
+    top: 0;
+    left: -260px;
+    width: 260px;
+    height: 100%;
+    background-color: #990000;
+    color: #fff;
+    overflow-y: auto;
+    padding-top: 3rem;
+    transition: left 0.3s ease;
+    z-index: 1000;
+}
+
+/* When open, the drawer slides in */
+.sidenav.open {
+    left: 0;
+}
+
+/* Links inside the side nav */
+.sidenav a {
+    display: flex;
+    align-items: center;
+    padding: 0.8rem 1rem;
+    color: #fff;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: background-color 0.2s ease;
+}
+
+/* Hover effect on nav links */
+.sidenav a:hover {
+    background-color: #7b001c;
+}
+
+/* Icons preceding each nav label */
+.nav-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 0.8rem;
+    /* Invert the black SVG icons to white for the crimson background */
+    filter: invert(1);
+}
+
+/* Adjust the content area to allow for the fixed top bar */
+.content {
+    margin-top: 4rem;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1rem;
+}
+
+/* Tables */
+.course-table,
+.timetable-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+.course-table th,
+.course-table td,
+.timetable-table th,
+.timetable-table td {
+    border: 1px solid #ddd;
+    padding: 0.5rem;
+    text-align: center;
+}
+.course-table th,
+.timetable-table th {
+    background-color: #990000;
+    color: #fff;
+}
+.course-table tr:nth-child(even),
+.timetable-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Notice Cards */
+.notice {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+}
+.notice h2 {
+    margin: 0 0 0.5rem 0;
+}
+.notice .date {
+    font-size: 0.8rem;
+    color: #777;
+}
+
+/* Button used on the course registration page.  Separating the
+   registration button from the table improves readability. */
+#registerButton {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #990000;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+#registerButton:hover {
+    background-color: #7b001c;
+}
+
+/* Banner image on the login page */
+.banner img {
+    width: 100%;
+    max-height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+/* ------------------------------------------------------------------
+   Task list styling.  Tasks are displayed in grouped sections with
+   colour‑coded status badges to reflect progress.  This layout is
+   inspired by IU’s task list design where each task has a status
+   indicator and can be updated by the user【579199063798451†L156-L163】.  */
+.task-group {
+    margin-bottom: 1.5rem;
+    padding-left: 0.5rem;
+}
+.task {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+.task-title {
+    flex: 1;
+}
+.badge {
+    display: inline-block;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    margin-right: 0.5rem;
+}
+.badge-not-started {
+    background-color: #cccccc;
+    color: #333;
+}
+.badge-started {
+    background-color: #e8a22d;
+    color: #330000;
+}
+.badge-needs-review {
+    background-color: #d7862b;
+    color: #330000;
+}
+.badge-completed {
+    background-color: #5ca05c;
+    color: #fff;
+}
+/* Style the status dropdown on tasks */
+.task select {
+    margin-left: 0.5rem;
+    padding: 0.2rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.8rem;
+}
+
+/*
+  Home page image gallery
+
+  The dashboard features a trio of illustrations inspired by
+  campus life, the library and virtual learning.  These images
+  reinforce the portal’s academic identity while adding visual
+  interest.  Flexbox is used to arrange the images responsively.
+*/
+.home-images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+.home-image {
+    flex: 1 1 300px;
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}

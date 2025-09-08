@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portal – Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="checkStudent(); loadDashboard();">
+    <!-- Navigation bar shared across portal pages.  The nav links allow
+         navigation between different sections and also provide a logout
+         option.  Each anchor uses a standard href for accessibility.
+    -->
+    <!-- Top bar and side navigation -->
+    <div class="topbar">
+        <span id="menuToggle" class="menu-toggle" onclick="toggleSidenav()">&#9776;</span>
+        <a href="dashboard.html" class="logo">Student Portal</a>
+    </div>
+    <div id="sidenav" class="sidenav">
+        <a href="dashboard.html"><img src="icons/home.svg" class="nav-icon" alt="">Dashboard</a>
+        <a href="course_registration.html"><img src="icons/course-registration.svg" class="nav-icon" alt="">Course Registration</a>
+        <a href="notices.html"><img src="icons/notices.svg" class="nav-icon" alt="">Notices</a>
+        <a href="results.html"><img src="icons/results.svg" class="nav-icon" alt="">Results</a>
+        <a href="timetable.html"><img src="icons/timetable.svg" class="nav-icon" alt="">Timetable</a>
+        <a href="attendance.html"><img src="icons/attendance.svg" class="nav-icon" alt="">Attendance</a>
+        <a href="assignments.html"><img src="icons/assignments.svg" class="nav-icon" alt="">Assignments</a>
+        <a href="library.html"><img src="icons/library.svg" class="nav-icon" alt="">Library</a>
+        <a href="calendar.html"><img src="icons/calendar.svg" class="nav-icon" alt="">Calendar</a>
+        <a href="tasks.html"><img src="icons/tasks.svg" class="nav-icon" alt="">Tasks</a>
+        <a href="messaging.html"><img src="icons/messaging.svg" class="nav-icon" alt="">Messaging</a>
+        <a href="notifications.html"><img src="icons/notifications.svg" class="nav-icon" alt="">Notifications</a>
+        <a href="assistant.html"><img src="icons/assistant.svg" class="nav-icon" alt="">Assistant</a>
+        <a href="analytics.html"><img src="icons/analytics.svg" class="nav-icon" alt="">Analytics</a>
+        <a href="profile.html"><img src="icons/profile.svg" class="nav-icon" alt="">Profile</a>
+        <a href="#" onclick="logout(); return false;"><img src="icons/logout.svg" class="nav-icon" alt="">Logout</a>
+    </div>
+
+    <div class="content">
+        <h1>Welcome, <span id="usernameDisplay">Student</span>!</h1>
+        <p>Use the menu to access course registration, notices, results and your personal timetable.  Each section is built using client‑side JavaScript and stores data in your browser’s localStorage so you can experiment without a back‑end.</p>
+
+        <!-- Decorative illustrations highlighting campus life, library and online learning -->
+        <div class="home-images">
+            <!-- First row of illustrations capturing campus life, library study and online learning -->
+            <img src="images/campus.png" alt="Campus illustration showing iconic academic buildings" class="home-image">
+            <img src="images/library.png" alt="Students collaborating in the library" class="home-image">
+            <img src="images/virtual.png" alt="Students engaged in online learning" class="home-image">
+            <!-- Second row of illustrations celebrating teamwork and graduation.  These images reinforce the vibrant
+                 student life on campus while maintaining the crimson and cream palette.  -->
+            <img src="images/collaboration.png" alt="Students working together outdoors with a graduate celebrating" class="home-image">
+            <img src="images/sports.png" alt="Students enjoying music and club activities" class="home-image">
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
